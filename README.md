@@ -55,7 +55,7 @@ This hands-on lab simulates real-world SOC analyst activities in a cloud environ
 1. **Clone the repository**
 2. Navigate to the `setup-guide/` and follow the instructions
 3. Deploy cloud resources and simulate threats
-4. Use `incident-playbooks/` to walk through detection and response step
+4. Use `incident-playbooks/` to walk through detection and response steps
 
 ---
 
