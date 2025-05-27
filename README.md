@@ -1,73 +1,76 @@
-# Cloud-Threat-Detection-and-Response-Lab
-cloud-threat-detection-lab/
-├── README.md
-├── architecture-diagram.png
-├── incident-playbooks/
-│   ├── s3-public-access.md
-│   ├── brute-force-login.md
-│   └── exposed-ssh-port.md
-├── logs-samples/
-│   ├── cloudtrail-log-sample.json
-│   └── guardduty-finding-sample.json
-├── alerting-setup/
-│   └── cloudwatch-sns-setup.md
-├── setup-guide/
-│   ├── aws-setup.md
-│   ├── enable-guardduty.md
-│   ├── enable-cloudtrail.md
-│   └── simulate-threats.md
-└── LICENSE
-
-
 # ☁️ Cloud Threat Detection & Response Lab (AWS Free Tier)
 
-This project simulates real-world SOC analyst activities in a cloud environment using AWS Free Tier. It demonstrates cloud log monitoring, threat detection, alerting, and incident response using Amazon GuardDuty, CloudTrail, and SNS.
+This hands-on lab simulates real-world SOC analyst activities in a cloud environment using **AWS Free Tier**. It demonstrates cloud log monitoring, threat detection, alerting, and incident response using **Amazon GuardDuty**, **CloudTrail**, and **SNS**.
 
-## 🔍 Features
+---
 
-- AWS GuardDuty threat detection (unauthorized access, vulnerable ports)
-- CloudTrail log analysis for user activities
-- CloudWatch alerting with Amazon SNS
-- Hands-on simulation of common cloud security incidents
-- Markdown-based Incident Response Playbooks
+## 🔍 Key Features
+
+- ✅ AWS GuardDuty threat detection (e.g., brute-force login, vulnerable ports)
+- ✅ CloudTrail log analysis for user activity monitoring
+- ✅ Alerting setup with CloudWatch Alarms and Amazon SNS
+- ✅ Step-by-step simulations of common cloud security incidents
+- ✅ Ready-to-use incident response playbooks in Markdown format
+
+---
 
 ## 🛠️ Tech Stack
 
-- **AWS Services**: EC2, S3, IAM, CloudTrail, GuardDuty, CloudWatch, SNS
-- **Languages**: Markdown (documentation), JSON (logs)
-- **Tools**: AWS Console, CLI, draw.io (diagram), VS Code
+- **Cloud Services**: EC2, S3, IAM, CloudTrail, GuardDuty, CloudWatch, SNS
+- **Formats**: Markdown (documentation), JSON (log samples)
+- **Tools Used**: AWS Console, AWS CLI, draw.io (architecture), VS Code
 
-## 📁 Folder Overview
+---
+
+## 📁 Project Structure
 
 | Folder | Description |
 |--------|-------------|
-| `incident-playbooks/` | Response plans for detected threats |
-| `logs-samples/` | Example CloudTrail and GuardDuty logs |
-| `setup-guide/` | Step-by-step instructions to recreate the lab |
-| `alerting-setup/` | Configuring CloudWatch to send SNS alerts |
-| `architecture-diagram.png` | Visual overview of the lab setup |
+| `incident-playbooks/` | Response procedures for simulated threats |
+| `logs-samples/` | Sample logs from CloudTrail and GuardDuty |
+| `setup-guide/` | Step-by-step deployment instructions |
+| `alerting-setup/` | SNS alert configuration with CloudWatch |
+| `architecture-diagram.png` | Visual representation of the lab setup |
 
-## Simulated Threats
+---
 
-- Public S3 bucket exposure
--  Multiple failed login attempts (IAM)
--  Open SSH ports on EC2
+## 🚨 Simulated Threat Scenarios
 
-##  Alerting
+- 🔓 Public S3 bucket exposure
+- 🔐 Multiple IAM login failures (Brute-force)
+- 🔥 Open SSH port detection on EC2 instance
 
-Configured CloudWatch Alarms trigger SNS notifications (email/SMS) upon detecting suspicious activities.
+---
 
-##  How to Use
+## 📣 Alerting Setup
 
-1. Clone the repo
-2. Follow the `setup-guide/` to deploy the lab in AWS
-3. Simulate threats manually or using automated scripts
-4. Review `incident-playbooks/` to analyze and respond
+- **CloudWatch Alarms** detect suspicious behavior
+- **SNS** sends real-time alerts via email or SMS
+- Simulated threats trigger alerts that mimic real SOC workflows
 
-##  Screenshot
+---
+
+## ▶️ How to Use
+
+1. **Clone the repository**
+2. Navigate to the `setup-guide/` and follow the instructions
+3. Deploy cloud resources and simulate threats
+4. Use `incident-playbooks/` to walk through detection and response steps
+
+---
+
+## 🖼 Architecture Diagram
 
 ![Architecture Diagram](architecture-diagram.png)
 
-##  License
+---
 
-MIT License
+## 📄 License
+
+This project is licensed under the **MIT License**.  
+Feel free to use, modify, and share.
+
+---
+
+> 🔐 Perfect for SOC Analyst beginners and cybersecurity students looking to understand cloud-based detection and response!
+
