@@ -1,76 +1,119 @@
-# ☁️ Cloud Threat Detection & Response Lab (AWS Free Tier)
+# Threat Detection & Response Lab (TDAR)
 
-This hands-on lab simulates real-world SOC analyst activities in a cloud environment using **AWS Free Tier**. It demonstrates cloud log monitoring, threat detection, alerting, and incident response using **Amazon GuardDuty**, **CloudTrail**, and **SNS**.
+<p align="center">
+  <img src="Assets/output-onlinepngtools.png" alt="TDAR Logo" />
+</p>
 
----
+Threat Detection & Response Lab (TDAR) offers a modular and scalable environment for security professionals to deploy, test, and analyze a variety of security tools and technologies. By leveraging modern infrastructure components like Docker, TDAR simplifies the deployment, management, and integration of cutting-edge security solutions.
 
-## 🔍 Key Features
+## Lab Diagram
 
-- ✅ AWS GuardDuty threat detection (e.g., brute-force login, vulnerable ports)
-- ✅ CloudTrail log analysis for user activity monitoring
-- ✅ Alerting setup with CloudWatch Alarms and Amazon SNS
-- ✅ Step-by-step simulations of common cloud security incidents
-- ✅ Ready-to-use incident response playbooks in Markdown format
+<p align="center">
+  <img src="Assets/labdaigram.png" alt="Lab Diagram" />
+</p>
 
----
+## Lab Infrastructure Diagram
 
-## 🛠️ Tech Stack
+<p align="center">
+  <img src="Assets/flowchart1.png" alt="Lab Infrastructure Diagram" />
+</p>
 
-- **Cloud Services**: EC2, S3, IAM, CloudTrail, GuardDuty, CloudWatch, SNS
-- **Formats**: Markdown (documentation), JSON (log samples)
-- **Tools Used**: AWS Console, AWS CLI, draw.io (architecture), VS Code
+The diagram above illustrates the architecture of the TDAR environment, showcasing the key components:
 
----
+- **Sources**: These include tools like OSQuery, Elastic-EDR, Sysmon, Packetbeat, and Windows Native Logging, which feed data into the system.
+- **Monitoring and Aggregation**: Elastic-Agent (stand-alone) and Crible Stream handle the management and processing of data collected from the sources.
+- **Output Tools**: Data is then visualized and analyzed using tools such as Azure Data Explorer, Graphana (Cloud), Splunk (On-prem), and Elastic (On-prem).
 
-## 📁 Project Structure
+### Key Elements:
 
-| Folder | Description |
-|--------|-------------|
-| `incident-playbooks/` | Response procedures for simulated threats |
-| `logs-samples/` | Sample logs from CloudTrail and GuardDuty |
-| `setup-guide/` | Step-by-step deployment instructions |
-| `alerting-setup/` | SNS alert configuration with CloudWatch |
-| `architecture-diagram.png` | Visual representation of the lab setup |
+1. **Sources**:
 
----
+   - OSQuery
+   - Elastic-EDR
+   - Sysmon
+   - Packetbeat
+   - Windows Native Logging
 
-## 🚨 Simulated Threat Scenarios
+2. **Monitoring & Data Ingestion**:
 
-- 🔓 Public S3 bucket exposure
-- 🔐 Multiple IAM login failures (Brute-force)
-- 🔥 Open SSH port detection on EC2 instance
+   - Elastic-Agent (Stand-Alone)
+   - Crible Stream
 
----
+3. **Output & Analysis**:
+   - Azure Data Explorer
+   - Graphana (Cloud)
+   - Splunk (On-prem)
+   - Elastic (On-prem)
 
-## 📣 Alerting Setup
+Each component in the architecture has been carefully selected to ensure maximum coverage of threat detection and incident response capabilities.
 
-- **CloudWatch Alarms** detect suspicious behavior
-- **SNS** sends real-time alerts via email or SMS
-- Simulated threats trigger alerts that mimic real SOC workflows
+## Capabilities
 
----
+- **Streamlined Deployment**: Docker and Docker Compose provide fast and efficient setup for all lab components.
+- **Scalable & Flexible**: Easily customize the lab environment with a variety of security tools based on specific testing or research needs.
+- **Comprehensive Tool Integration**: Integrates leading security solutions such as Splunk, Elastic SIEM, Cribl, n8n SOAR, and Shuffle for diverse use cases.
+- **Hands-on Security Testing**: Simulate real-world scenarios including threat detection, incident response, and threat hunting exercises.
 
-## ▶️ How to Use
+## System Architecture
 
-1. **Clone the repository**
-2. Navigate to the `setup-guide/` and follow the instructions
-3. Deploy cloud resources and simulate threats
-4. Use `incident-playbooks/` to walk through detection and response steps
+### Components
 
----
+- **Firewall (opnSense)**: To ensure isolation and enforce firewall rules.
+- **Windows Box**: Native logging, Sysmon, OSQUERY, and forensic tools for endpoint security.
+- **Logging Server (Ubuntu)**: Acts as the SIEM with tools like Splunk, Elastic SIEM, and security monitoring software.
+- **SOAR (Tines Community Edition)**: Security orchestration for automation and response.
+- **Case Management (JIRA Community Edition)**: Tracks and manages incidents and responses.
 
-## 🖼 Architecture Diagram
+## Key Takeaways
 
-![Architecture Diagram](architecture-diagram.png)
+- Administration of production-grade tools.
+- Mastery of configuration management.
+- Building and understanding logs & data structures.
+- Creating custom threat detection queries.
+- Visualization and data analytics using leading platforms.
+- Developing and refining threat hunting skills.
+- Integration with multiple platforms for streamlined workflows.
 
----
+## Tooling
 
-## 📄 License
+- **EDR (Elastic EDR)**: Endpoint Detection and Response.
+- **OSQUERY**: Host-based analytics tool to identify anomalies and queries across endpoints.
+- **Sysmon**: Monitors and logs system-level events for detailed insights.
+- **Logging**: Windows native logging, Sysmon, and Packetbeat.
+- **Cribl Stream**: Manage and route data to multiple destinations.
+- **Splunk**: Data analytics platform for monitoring and searching machine data.
+- **Elastic SIEM**: SIEM solution for threat detection and incident response.
+- **Atomic Red Team**: For threat simulation and adversary emulation.
+- **Caldera**: Automated adversary emulation system to run penetration tests.
 
-This project is licensed under the **MIT License**.  
-Feel free to use, modify, and share.
+## System Requirements
 
----
+- **Docker** (for containerized deployments)
+- **Docker Compose** (to manage multi-container applications)
+- **Bash shell** (for automation and management scripts)
+- **Internet Access** (for integrating external sources like JIRA, Tines, and other cloud-based services)
 
-> 🔐 Perfect for SOC Analyst beginners and cybersecurity students looking to understand cloud-based detection and response!
+## Integrated Solutions
 
+- **Splunk**: Real-time data monitoring, search, and analytics platform with powerful querying capabilities.
+- **Elastic SIEM**: Elastic Stack-powered SIEM for managing security events, logs, and incidents.
+- **Cribl Stream**: Log routing and observability pipeline for centralized management of security data.
+- **n8n SOAR**: Open-source automation tool for orchestrating security operations workflows.
+- **Shuffle**: SOAR platform focused on automating and streamlining security processes.
+
+## Configuration Options
+
+TDAR supports both cloud-based and on-premises deployments for data management and analysis. Choose from:
+
+- **Elastic Agent Standalone**: Centralized logging and monitoring solution using the Elastic Stack.
+- **Cribl Stream**: Integrate with multiple data destinations for easy management and scalability.
+- **Logstash/Kafka**: Robust data pipeline solutions for high-volume log ingestion and real-time analysis.
+- **Splunk (On-Prem)**: Install Splunk locally to leverage full control over ingestion limits, data retention, and analytics.
+- **Cloud Destinations**: Integrate with Azure Data Explorer, Grafana, or Elastic Cloud for scalable storage and visualization.
+
+## Usage Scenarios
+
+- **Incident Response**: Test and refine your incident response playbooks.
+- **Threat Hunting**: Leverage powerful SIEM and EDR capabilities to detect and hunt for advanced threats.
+- **Threat Simulation**: Simulate APT attacks and malware detonation using tools like Atomic Red Team and Caldera.
+- **Log Analysis & Visualization**: Visualize data trends and insights using Grafana, Splunk, or Elastic Dashboards.
